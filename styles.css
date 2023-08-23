@@ -1,0 +1,34 @@
+html, body{
+    margin: 0;
+    height: 98vh;
+   
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.grid{
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border-collapse: collapse;
+}
+.grid-item {
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid transparent; /* Hide all borders */
+  }
+
+.grid-item:not(:nth-child(3n)) {
+        border-right-color: black; 
+    
+}
+  
+.grid-item:not(:nth-child(8n)):not(:last-child):not(:nth-child(7n)) {
+    border-bottom-color: black; 
+}
+
