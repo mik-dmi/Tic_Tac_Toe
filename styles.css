@@ -5,6 +5,7 @@ html, body{
 }
 .container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -15,20 +16,56 @@ html, body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     border-collapse: collapse;
+    margin: 2rem;
 }
-.grid-item {
+.grid_item {
     background-color: lightgray;
     text-align: center;
     padding: 20px;
     border: 1px solid transparent; /* Hide all borders */
   }
 
-.grid-item:not(:nth-child(3n)) {
+.grid_item:not(:nth-child(3n)) {
         border-right-color: black; 
     
 }
   
-.grid-item:not(:nth-child(8n)):not(:last-child):not(:nth-child(7n)) {
+.grid_item:not(:nth-child(8n)):not(:last-child):not(:nth-child(7n)) {
     border-bottom-color: black; 
 }
 
+.players_form{
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+}
+.player_x_display, .player_o_display{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+.start_game_button{
+    display:flex ;
+    justify-content: center;
+    height: fit-content;
+    background: rgb(237, 64, 64);
+    border: none;
+    border-radius: 0.1rem;
+}
+.start_button{
+    display:flex ;
+    justify-content: flex-start;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    
+}
+.start_button:active{
+    transform: scale(0.99);
+}
+
+label{
+    font-size: 0.8rem;
+    font-weight: 700;
+}
