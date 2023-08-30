@@ -3,18 +3,24 @@ import startGame  from './module/start_game.js';
 
 
 
-const players = function (name, shape , playingOrNot) {
-    this.name = name;
-    this.playerNumber = shape;
-    this.turn = playingOrNot; 
-}
+const makePlayers = function(name, shape, playingOrNot) {
+    return {
+        name: name,
+        playerNumber: shape,
+        turn: playingOrNot
+    };
+};
 
-aplayer_x = players(" as ", "0", "false");
-player_o = players("as ", "1", "false");
+let players = [makePlayers(" ", 0, false), makePlayers(" ", 1, false)];  /* X is the 0 position and O is the 1 position)*/
 
 
-diplayGridModule.cellListener();
-playerPlaying = startGame.startPlaying(player_x, player_o);
+
+players = diplayGridModule.cellListener(players[0], players[1]);
+players = startGame.startPlaying(players[0], players[1]);
+
+
+
+
 
 
 
