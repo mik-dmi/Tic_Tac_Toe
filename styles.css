@@ -1,22 +1,35 @@
+@font-face {
+    font-family: myFont;
+    src: url(RetroVintage_Regular.otf);
+}
+@font-face {
+    font-family: myFont_two;
+    src: url(Storm_Gust.ttf);
+}
+
 html, body{
     margin: 0;
     height: 98vh;
+    background-color: rgb(174, 207, 237);
    
 }
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+   
     height: 100%;
 }
 .grid{
     display: grid;
-    
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr;
     border-collapse: collapse;
+    border-radius: 1rem;
+    overflow: hidden; 
     margin: 2rem;
+    height: 30rem;
+    width: 30rem;
 }
 .grid_item {
     background-color: lightgray;
@@ -51,25 +64,69 @@ html, body{
     height: fit-content;
     background: rgb(237, 64, 64);
     border: none;
-    border-radius: 0.1rem;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 400;
+    font-family: myFont_two;
 }
 .start_button{
     display:flex ;
-    justify-content: flex-start;
+    justify-content: center;
     margin-left: 0.5rem;
+    margin-top: 1rem;
     cursor: pointer;
     transition: transform 0.2s ease;
+   
     
 }
 .start_button:active{
     transform: scale(0.99);
+    
 }
 
 label{
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: myFont_two;
+    color: rgb(22, 22, 168);
 }
 
 .hidden{
     display:none   ;
+}
+
+.header{
+    font-size: 5rem;
+    font-weight: 200;
+    font-family: myFont;
+    margin: 1rem;
+    color: rgb(0, 0, 0);
+}
+.bottom_part_of_container{
+    height:fit-content;
+}
+.resetButton{
+    background: #8a9996;
+    font-size: 1.9rem;
+    border-radius: 0.4rem;
+    font-weight: 400;
+    padding: 0.2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: white;
+    font-family: myFont_two;
+}
+
+input{
+    font-size: 1.5rem;
+}
+
+.top_part_of_container{
+    font-family: myFont_two;
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding-top: 1rem;
+    color: rgb(22, 22, 168);
+
 }

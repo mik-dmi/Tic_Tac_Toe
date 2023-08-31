@@ -70,24 +70,19 @@ const diplayGridModule = {
                         topOfContainer.textContent = first_player.name + " it's your turn to play!!!"
                     }
                     console.log("BEFORE CHECKING SCORES" + endTheGame.switch);
+
                     endTheGame.switch = checkScore(gridCells, topOfContainer, first_player, second_player);
                     console.log("AFERTER CHECK SCORES" + endTheGame.switch);
                     
                 }
-                if(endTheGame.switch == false ){
-                    for (const cell of gridCells){
-                        if (cell.textContent !== "X" && cell.textContent !== "O") { // Found an empty cell4
-                            endTheGame.switch == false;
-                            
-                        }
-                        else{
-                            endTheGame.switch == true;
-                        
-                        }
-                    }   
+                if(endTheGame.switch === false ){
+                    const allCellsFilled = Array.from(gridCells).every(cell => cell.textContent.trim() !== ''); 
+                    if (allCellsFilled) {
+                        endTheGame.switch = true;
+                        topOfContainer.textContent = "It's a DRAW !!!"
+                    }  
+                }   
                 }
-                
-            }
                /* if(endTheGame.switch){
                     gridCells.forEach(square => square.replaceWith(square.cloneNode(true))); */   /*takes out the listener*/
                     
