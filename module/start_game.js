@@ -1,25 +1,30 @@
+
+import {endTheGame} from './display_functions.js';
+
+
+
+
 const startGame = {
     startPlaying: (player_zero, player_one)=>{
-        const startButton = document.getElementById("form"); /*variable with the forms*/
-        const topOfContainer = document.querySelector(".top_part_of_container")
-        const playerTurnDiplay  = document.createElement("div");
-        playerTurnDiplay.className = "display_turn";
-
+        const forms = document.getElementById("form"); /*variable with the forms*/
+        const topOfContainer = document.querySelector(".top_part_of_container");
         let randomNumber = Math.random();/*choose randomly which palyer is going to start playing */
         let randomChoice = Math.round(randomNumber);/*choose randomly which palyer is going to start playing */
         
-        startButton.addEventListener("submit",(e)=>{
+        
+        forms.addEventListener("submit",(e)=>{
+            console.log(forms.classList)
+            forms.classList.toggle("hidden");
+            console.log(forms.classList)
             e.preventDefault();
-            
-            player_zero.name = startButton["name_player_x"].value;
-            player_one.name = startButton["name_player_o"].value;
-            startButton.remove();
-            topOfContainer.appendChild(playerTurnDiplay); 
-            (randomChoice == 0) ? playerTurnDiplay.textContent = player_zero.name 
-            + " it's your turn to play!!!" : playerTurnDiplay.textContent = player_one.name + " it's your turn to play!!!" ;  
+            player_zero.name = forms["name_player_x"].value;
+            player_one.name = forms["name_player_o"].value;
+            (randomChoice == 0) ? topOfContainer.textContent = player_zero.name 
+            + " it's your turn to play!!!" : topOfContainer.textContent = player_one.name + " it's your turn to play!!!" ;  
             (randomChoice == 0) ? player_zero.turn = true : player_one.turn = true;
-   
-
+            endTheGame.switch = false;
+            console.log("endswitch " + endTheGame.switch)
+            
         });
         return[player_zero, player_one]
     }
