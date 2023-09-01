@@ -27,6 +27,7 @@ const makePlayers = function(name, shape, playingOrNot) {
     };
 };
 const resetPlayer = makePlayers(" ", 0, false);
+const forms = document.getElementById("form");
 let players = [makePlayers(" ", 0, false), makePlayers(" ", 1, false)];  /* X is the 0 position and O is the 1 position)*/
 
 let aux = [];
@@ -40,13 +41,16 @@ players = startGame.startPlaying(players[0], players[1]);
 
 
 const resetButton = document.querySelector(".resetButton")
+
 resetButton.addEventListener('click', () => {
+    if (forms.classList.contains('hidden')){
     console.log("main 1 "+ endTheGame.switch )
     aux = diplayGridModule.reset( resetPlayer);
     players[0] = aux[0];
     players[1] = aux[1];
+    endTheGame.switch = true;
   
-
+    }
     console.log("main 2 "+ endTheGame)
 })
 
