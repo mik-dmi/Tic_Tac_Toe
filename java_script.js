@@ -12,13 +12,7 @@ function makeGrid(){
         gridCell.id = i.toString();
         gridContainer.appendChild(gridCell);
     }
-    
  }
-
-
-
-
-
 const makePlayers = function(name, shape, playingOrNot) {
     return {
         name: name,
@@ -37,21 +31,17 @@ makeGrid();
 players = startGame.startPlaying(players[0], players[1]);
  diplayGridModule.cellListener(players[0], players[1]);
 
-
-
-
 const resetButton = document.querySelector(".resetButton")
 
 resetButton.addEventListener('click', () => {
     if (forms.classList.contains('hidden')){
-    console.log("main 1 "+ endTheGame.switch )
-    aux = diplayGridModule.reset( resetPlayer);
-    players[0] = aux[0];
-    players[1] = aux[1];
-    endTheGame.switch = true;
+        aux = diplayGridModule.reset( resetPlayer);
+        players[0] = aux[0];
+        players[1] = aux[1];
+        endTheGame.switch = true;
   
     }
-    console.log("main 2 "+ endTheGame)
+   
 })
 
 

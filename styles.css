@@ -36,6 +36,12 @@ html, body{
     text-align: center;
     padding: 20px;
     border: 1px solid transparent; /* Hide all borders */
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(0, 0, 0);
   }
 
 .grid_item:not(:nth-child(3n)) {

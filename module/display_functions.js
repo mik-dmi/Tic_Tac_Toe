@@ -53,26 +53,29 @@ const diplayGridModule = {
         gridCells.forEach(cell => {
             cell.addEventListener('click', function(){
 /*--------------------------------------- Some rule of tic tac toe ---------------------------------------------*/
-            console.log("Before " +endTheGame.switch  )
+           
             if(!endTheGame.switch){   
                 
                 if( cell.textContent != "O" && cell.textContent != "X" ){  
                     if (first_player.turn == true){
                         cell.textContent = "X"
+                        cell.style.color = "rgb(199, 29, 29)";
                         first_player.turn = false;
                         second_player.turn = true;
                         topOfContainer.textContent = second_player.name + " it's your turn to play!!!"
                     }
                     else if (second_player.turn == true){
                         cell.textContent = "O"
+                        cell.style.color = "rgb(22, 22, 168)";
                         second_player.turn = false;
+                        cell.style.color = "blue";
                         first_player.turn = true;
                         topOfContainer.textContent = first_player.name + " it's your turn to play!!!"
                     }
-                    console.log("BEFORE CHECKING SCORES" + endTheGame.switch);
+                    
 
                     endTheGame.switch = checkScore(gridCells, topOfContainer, first_player, second_player);
-                    console.log("AFERTER CHECK SCORES" + endTheGame.switch);
+                    
                     
                 }
                 if(endTheGame.switch === false ){

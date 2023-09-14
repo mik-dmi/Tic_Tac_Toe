@@ -13,9 +13,7 @@ const startGame = {
         
         
         forms.addEventListener("submit",(e)=>{
-            console.log(forms.classList)
             forms.classList.toggle("hidden");
-            console.log(forms.classList)
             e.preventDefault();
             player_zero.name = forms["name_player_x"].value;
             player_one.name = forms["name_player_o"].value;
@@ -23,7 +21,7 @@ const startGame = {
             + " it's your turn to play!!!" : topOfContainer.textContent = player_one.name + " it's your turn to play!!!" ;  
             (randomChoice == 0) ? player_zero.turn = true : player_one.turn = true;
             endTheGame.switch = false;
-            console.log("endswitch " + endTheGame.switch)
+            
             
         });
         return[player_zero, player_one]
