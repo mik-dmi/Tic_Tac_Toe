@@ -9,8 +9,10 @@
 
 html, body{
     margin: 0;
-    height: 98vh;
-    background-color: rgb(174, 207, 237);
+    height: 100vh;
+    background-image: linear-gradient(to right bottom,  rgb(220, 151, 151) , rgb(102, 154, 223) );
+ 
+    
    
 }
 .container{
@@ -107,7 +109,7 @@ label{
     font-weight: 200;
     font-family: myFont;
     margin: 1rem;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 .bottom_part_of_container{
     height:fit-content;

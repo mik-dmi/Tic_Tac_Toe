@@ -5,7 +5,7 @@ const endTheGame = {
   };
   
 
-function checkScore(allTheCells, displayTheWinner, playerX ,playerO){
+function checkScore(allTheCells, displayTheWinner, playerX ,playerO, topOfContainer){
     const winningCombos = [
         [0, 1, 2],[3, 4, 5],[6, 7, 8],
         [0, 3, 6],[1, 4, 7], [2, 5, 8],
@@ -26,11 +26,15 @@ function checkScore(allTheCells, displayTheWinner, playerX ,playerO){
    
         if(xWins){ 
             displayTheWinner.textContent = playerX.name + " IS THE WINNER!!!"
+            topOfContainer
+            topOfContainer.style.color = "rgb(199, 29, 29)";
+
             aux = true;
     };
         if(oWins){ 
             displayTheWinner.textContent = playerO.name + " IS THE WINNER!!!"
             aux = true;
+            topOfContainer.style.color = "rgb(22, 22, 168)"
         }    
     }) 
     return aux;  
@@ -60,6 +64,7 @@ const diplayGridModule = {
                     if (first_player.turn == true){
                         cell.textContent = "X"
                         cell.style.color = "rgb(199, 29, 29)";
+                        topOfContainer.style.color = "rgb(22, 22, 168)"
                         first_player.turn = false;
                         second_player.turn = true;
                         topOfContainer.textContent = second_player.name + " it's your turn to play!!!"
@@ -68,13 +73,14 @@ const diplayGridModule = {
                         cell.textContent = "O"
                         cell.style.color = "rgb(22, 22, 168)";
                         second_player.turn = false;
+                        topOfContainer.style.color = "rgb(199, 29, 29)";
                         cell.style.color = "blue";
                         first_player.turn = true;
                         topOfContainer.textContent = first_player.name + " it's your turn to play!!!"
                     }
                     
 
-                    endTheGame.switch = checkScore(gridCells, topOfContainer, first_player, second_player);
+                    endTheGame.switch = checkScore(gridCells, topOfContainer, first_player, second_player, topOfContainer);
                     
                     
                 }
@@ -83,6 +89,8 @@ const diplayGridModule = {
                     if (allCellsFilled) {
                         endTheGame.switch = true;
                         topOfContainer.textContent = "It's a DRAW !!!"
+                        topOfContainer.style.color = "green";
+
                     }  
                 }   
                 }
