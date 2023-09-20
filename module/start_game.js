@@ -21,6 +21,7 @@ const startGame = {
             + " it's your turn to play!!!" : topOfContainer.textContent = player_one.name + " it's your turn to play!!!" ;  
             (randomChoice == 0) ? player_zero.turn = true : player_one.turn = true;
             endTheGame.switch = false;
+            topOfContainer.style.color = "rgb(199, 29, 29)";
             
             
         });
