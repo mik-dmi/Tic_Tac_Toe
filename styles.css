@@ -18,7 +18,7 @@ html, body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    height: 100%;
     background-image: linear-gradient(to right bottom,  rgb(220, 151, 151) , rgb(102, 154, 223) );
     background-repeat: no-repeat;
     background-size: cover;
